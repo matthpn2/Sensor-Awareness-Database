@@ -34,8 +34,8 @@ CREATE TABLE Room
         loid INT NOT NULL AUTO_INCREMENT,
         roomnumber VARCHAR(50) NOT NULL,
         capacity INT UNSIGNED NOT NULL,
-        isoffice bool NOT NULL,
-        ismeetingroom bool NOT NULL,
+        isoffice BOOL NOT NULL,
+        ismeetingroom BOOL NOT NULL,
         PRIMARY KEY (loid),
         FOREIGN KEY (loid) REFERENCES LocationObject(loid)
     );
