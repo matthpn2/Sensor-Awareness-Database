@@ -23,7 +23,6 @@ CREATE TABLE taken_courses
         FOREIGN KEY(cid) REFERENCES course(cid) ON UPDATE CASCADE
     );
 
-
 -- ASSERTION TABLE -- 
 CREATE ASSERTION advanced_student CHECK
     (

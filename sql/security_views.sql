@@ -13,7 +13,6 @@ CREATE VIEW visitors AS
 
 SELECT * FROM visitors;
 
-
 -- ANALYSTS VIEWS with VERIFICATION --
 CREATE VIEW analysts AS
     SELECt r.isoffice,
@@ -30,7 +29,6 @@ CREATE VIEW analysts AS
     GROUP BY r.loid, r.isoffice, r.ismeetingroom;
 
 SELECT * FROM analysts;
-
 
 -- BUILDING MANAGERS VIEW and VERIFICATION --
 CREATE VIEW building_managers AS 

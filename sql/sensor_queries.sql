@@ -23,7 +23,6 @@ SELECT r.capacity
 FROM Room AS r, Person AS p, AssignedTo as at
 WHERE p.firstname = 'Chen' AND p.lastname = 'Li' AND a.pid = p.pid AND at.loid = r.loid;
 
-
 -- LIST TYPE AND NUMBER OF ACTIVITIES PER ACTIVITY TYPE THAT HAPPENED IN ROOM NAME "R1100" IN 2016. --
 SELECT a.type,
        COUNT(*)
@@ -38,7 +37,6 @@ WHERE Year(df.timestamp) = 2016 AND EXISTS (
                                            )
 GROUP BY a.type;
 
-
 -- LIST IDS OF ACTIVITIES THAT OCCURRED IN DBH IN 2016. --
 SELECT DISTINCT aid
 FROM TookPlace
@@ -46,7 +44,6 @@ NATURAL JOIN DerivedFrom
 NATURAL JOIN Building
 NATURAL JOIN PartOf
 WHERE name = 'DBH' AND YEAR(timestamp) = 2016;
-
 
 -- LIST NAMES OF EVENTS THAT WERE ATTENED BY ALL ISG FACULTY. IF REDUNDANT, LIST ONLY ONE NAME OF THE EVENT. --
 SELECT DISTINCT e.name
@@ -83,7 +80,6 @@ WHERE p.firstname = 'Ramesh' AND p.lastname = 'Jain' AND pt.aid IN
         )
     );
 
-
 -- LIST SENSORS ID AND NAME THAT HAVE NO PRODUCED ANY OBSERVATION OVER THE PAST MONTH, ASSUMING TODAY IS 12/01/16. --
 SELECT s.sid,
        s.name
@@ -94,7 +90,6 @@ WHERE s.sid NOT IN (
                        WHERE DATE(df.timestamp) BETWEEN '2016-11-01' AND '2016-12-01'
                    );
 
-
 -- LIST SENSORS ID WITH NAME AND THE NUMBER OF ACTIVITIES DERIVED FROM OBSERVATION BASED ON THIS SENSOR, COUNTING EACH ACTIVITY ONCE FOR EACH SENSOR. --
 SELECT s.sid,
        s.name,
@@ -104,13 +99,11 @@ NATURAL JOIN DerivedFrom
 NATURAL JOIN Activity AS a
 GROUP BY s.sid;
 
-
 -- LIST AVERAGE NUMBER OF SENSORS PER SENSOR PLATFORM --
 SELECT AVG(sensorCount) AS averageCount
 FROM (
         SELECT
      )
-
 
 -- List​ ​average​ ​number​ ​of​ ​sensors​ ​per​ ​sensor​ ​platform. -- 
 SELECT AVG(count) AS averageCount
@@ -119,7 +112,6 @@ FROM (
          FROM hasSensor AS hs
          GROUP BY hs.spid
      ) AS sensorCount;
-
 
 -- Retrieve images from all the video cameras in DBH that are in the office rooms on 12/24/15 from 1:00 - 2:00PM. --
 SELECT ri.image

@@ -39,7 +39,6 @@ INSERT INTO RawTemperature(oid, sid, temperature, tstamp) VALUES (203, 6, 150.45
 
 SELECT * FROM RawTemperature WHERE sid=6;
 
-
 -- ROOM CAPACITY, FIRE CODE TRIGGER and VERIFICATION --
 CREATE TABLE FCV
     (
